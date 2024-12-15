@@ -17,7 +17,10 @@ export default function RootLayout({ children }) {
   return (
       <ClerkProvider
           appearance={{
-              baseTheme:  shadesOfPurple
+              baseTheme:  shadesOfPurple,
+              variables:{
+                  // colorBackground:'yellow' //play with these , see clerk doc to make color changes as needed
+              }
           }}
       >
           <html lang="en">
