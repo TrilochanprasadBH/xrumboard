@@ -1,5 +1,6 @@
 import { clerkMiddleware ,createRouteMatcher} from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import {redirect} from "next/navigation";
 
 const isProtectedRoute = createRouteMatcher([
     "/onboarding(.*)",
@@ -9,10 +10,10 @@ const isProtectedRoute = createRouteMatcher([
 ])
 
 export default clerkMiddleware((auth,req)=>{
-    if(!auth.userId && isProtectedRoute(req)){
-        return NextResponse.redirect('http://localhost:3000/sign-in?after_sign_in_url=http%3A%2F%2Flocalhost%3A3000%2Fonboarding&redirect_url=http%3A%2F%2Flocalhost%3A3000%2F'); // Replace with your actual sign-in URL
+    if(!auth().userId && isProtectedRoute(req)){
+         return auth().redirectToSignIn("/onboarding");
     }
-});
+})
 
 export const config = {
     matcher: [
