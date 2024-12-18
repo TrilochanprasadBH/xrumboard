@@ -8,12 +8,13 @@ import UserMenu from "@/components/user-menu";
 
 function Header(props) {
     return (
-        <header className={'py-6'}>
-            <nav className={'px-10 py-6 flex items-center justify-between'}>
-                {/*<Image src={} alt={}/>*/}
-                <h1 className={'text-4xl text-white-500'}>XrumBoard</h1>
+        <header className={'flex flex-col gap-5 items-center py-10   sm:flex-row justify-between  py-6 px-6'}>
+            <h1 className={'text-4xl text-white-500'}>XrumBoard</h1>
 
-                <div className={'flex items-center justify-between gap-4'}>
+            <nav>
+                {/*<Image src={} alt={}/>*/}
+
+                <div className={'flex justify-between items-center  gap-4'}>
                     <Link href="/project/create">
                         <Button variant={'destructive'}>
                             <PenBox size={'small'}/>
