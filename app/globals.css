@@ -6,6 +6,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  /*im writing my custom css class in this*/
+  .gradient-title{
+    @apply font-extrabold bg-gradient-to-br from-blue-500 via-blue-100 to-blue-900 bg-clip-text tracking-tighter
+    text-transparent;
+  }
+  .logo-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500;
+    @apply text-4xl md:text-6xl font-extrabold;
+  }
+
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
