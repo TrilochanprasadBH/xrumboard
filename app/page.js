@@ -1,8 +1,9 @@
+//this is a server component , as no 'use client' is used here  ,
+// also because this is server component this will rank higher on Google etc. , might.
 import {Button} from "@/components/ui/button";
 import {BarChart, Calendar, ChevronRight, Layout} from "lucide-react";
 import Link from "next/link";
 import {Card, CardContent} from "@/components/ui/card";
-import {gray} from "next/dist/lib/picocolors";
 
 const features = [
     {
@@ -50,20 +51,22 @@ export default function Home() {
                 <div className={'container mx-auto'}>
                     <h3 className={'text-3xl font-bold text-center mb-12 text-purple-300'}>Key Features</h3>
                     <div className={'grid grid-cols-1 lg:grid-cols-3 gap-8'}>
-                    {features.map((feature, index) => {
-                        return (
-                            <Card key={index} className={'bg-gray-700'}>
-                                <CardContent className={'pt-4'}>
-                                    <feature.icon className={'h-12 w-12 mb-4 text-blue-300'}/>
-                                    <h2 className={'text-xl font-bold text-blue-300 mb-2'}>{feature.title}</h2>
-                                    <p>{feature.description}</p>
-                                </CardContent>
-                            </Card>
-                        )
-                    })}
+                        {features.map((feature, index) => {
+                            return (
+                                <Card key={index} className={'bg-gray-700'}>
+                                    <CardContent className={'pt-4'}>
+                                        <feature.icon className={'h-12 w-12 mb-4 text-blue-300'}/>
+                                        <h2 className={'text-xl font-bold text-blue-300 mb-2'}>{feature.title}</h2>
+                                        <p>{feature.description}</p>
+                                    </CardContent>
+                                </Card>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
+
+
         </div>
     );
 }
