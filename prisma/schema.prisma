@@ -93,3 +93,5 @@ enum IssuePriority {
   HIGH
   URGENT
 }
+
+//learn database design , crucial skill
