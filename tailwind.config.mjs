@@ -81,3 +81,5 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 };
+
+//learn using tailwind css effectively for - having own variants and typographies etc
